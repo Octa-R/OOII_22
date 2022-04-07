@@ -5,9 +5,7 @@ import java.time.LocalDate;
 public class Archivo extends FileSystem {
 
     public Archivo(String nombre, LocalDate fecha, int tamano) {
-        this.fecha = fecha;
-        this.nombre = nombre;
-        this.tamano = tamano;
+        super(nombre,fecha,tamano);
     }
 
     @Override
@@ -15,5 +13,13 @@ public class Archivo extends FileSystem {
         return this.tamano;
     }
 
-    
+    @Override
+    public Archivo archivoMasGrande() {
+        return this;
+    }
+
+    @Override
+    public Archivo archivoMasNuevo() {
+        return this;
+    }
 }

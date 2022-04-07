@@ -2,6 +2,7 @@ package ar.edu.unlp.info.oo2.p2_filesystem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Directorio extends FileSystem {
@@ -9,10 +10,8 @@ public class Directorio extends FileSystem {
     private List<FileSystem> data;
 
     public Directorio(String nombre, LocalDate fecha) {
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.tamano = 32;
-        this.data = new ArrayList<>();
+        super(nombre,fecha,32);
+        this.data = new ArrayList<FileSystem>();
     }
 
     @Override
@@ -23,15 +22,20 @@ public class Directorio extends FileSystem {
     }
 
     public Archivo archivoMasGrande() {
-        return null;
+        return this.data.stream()
+            .map(c -> c.archivoMasGrande())
+            .max(Comparator.comparingInt(c -> c.tamanoTotalOcupado()))
+            .orElse(null);
     }
 
     public Archivo archivoMasNuevo() {
-        return null;
+        return this.data.stream()
+            .map(c -> c.archivoMasNuevo())
+            .max(Comparator.comparing(c -> c.getFecha()))
+            .orElse(null);
     }
 
     public boolean agregar(FileSystem fs) {
         return this.data.add(fs);
     }
-    
 }
