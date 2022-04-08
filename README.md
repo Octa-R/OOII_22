@@ -1,4 +1,4 @@
-# OOII_22
+# Programación Orientada a Objetos II
 
 ## Práctica 1
 
