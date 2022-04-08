@@ -33,7 +33,7 @@
 
 ## Práctica 3
 
-1.ToDoItem
+1. ToDoItem
 [src](https://github.com/Octa-R/OOII_22/tree/main/Practica-3/ej1/src/main/java/ar/edu/unlp/info/oo2/ej1_ToDoItem)
 [test](https://github.com/Octa-R/OOII_22/tree/test/Practica-3/ej1/src/main/java/ar/edu/unlp/info/oo2/ej1_ToDoItem)
 
