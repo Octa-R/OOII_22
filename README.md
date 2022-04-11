@@ -16,8 +16,8 @@
 
 ## Práctica 2
 1. Topografías  
-[src]()
-[test]()
+[src](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-2/ej1_topografias/src/main/java/ar/edu/unlp/info/oo2/ej1_topografia)
+[test](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-2/ej1_topografias/test/main/java/ar/edu/unlp/info/oo2/ej1_topografia)
 
 2. Topografías b  
 [src]()
@@ -28,8 +28,7 @@
 [test]()
 
 4. Cálculo de sueldos  
-[src]()
-[test]()
+[src](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-2/ej4_calculo_sueldos/src/main/java/ar/edu/unlp/info/oo2/calculo_sueldos)
 
 ## Práctica 3
 
