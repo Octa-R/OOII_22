@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.proyecto_ejemplo;
+package ar.edu.unlp.info.oo2.calculo_sueldos;
 
 public class EmpleadoTemporario  extends Empleado {
     

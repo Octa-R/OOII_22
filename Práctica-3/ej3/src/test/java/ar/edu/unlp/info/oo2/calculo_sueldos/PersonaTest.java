@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.unlp.info.oo2.proyecto_ejemplo;
+package ar.edu.unlp.info.oo2.calculo_sueldos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
