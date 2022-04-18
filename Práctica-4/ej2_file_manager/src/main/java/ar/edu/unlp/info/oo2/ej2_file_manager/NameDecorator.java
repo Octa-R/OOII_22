@@ -6,6 +6,6 @@ public class NameDecorator extends FileDecorator{
     }
     @Override
     public String prettyPrint() {
-        return super.prettyPrint() + " " + this.component.getName();
+        return this.component.getName() + " " + super.prettyPrint();
     }
 }

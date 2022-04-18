@@ -7,8 +7,6 @@ public class CreatedAtDecorator extends FileDecorator{
 
     @Override
     public String prettyPrint() {
-        return super.prettyPrint() + this.createdAt;
+        return this.component.getCreatedAt() + " " + super.prettyPrint();
     }
-
-
 }

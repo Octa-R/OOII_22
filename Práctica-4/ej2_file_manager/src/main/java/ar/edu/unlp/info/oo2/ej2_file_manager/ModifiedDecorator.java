@@ -6,6 +6,6 @@ public class ModifiedDecorator extends FileDecorator{
     }
     @Override
     public String prettyPrint() {
-        return super.prettyPrint() + this.modifiedAt;
+        return this.component.getModifiedAt() + " " + super.prettyPrint();
     }
 }

@@ -6,6 +6,6 @@ public class ExtensionDecorator extends FileDecorator{
     }
     @Override
     public String prettyPrint() {
-        return super.prettyPrint() + this.extension;
+        return this.component.getExtension() + " " + super.prettyPrint();
     }
 }

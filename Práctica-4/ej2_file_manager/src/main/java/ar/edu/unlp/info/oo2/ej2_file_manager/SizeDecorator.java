@@ -6,6 +6,6 @@ public class SizeDecorator extends FileDecorator {
     }
     @Override
     public String prettyPrint() {
-        return super.prettyPrint() + this.size;
+        return this.component.getSize() + "Kb " + super.prettyPrint();
     }
 }
