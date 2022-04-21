@@ -46,3 +46,21 @@
 4. Decodificador de películas  
 [src]()
 [test]()
+
+## Práctica 4  
+1. Acceso a la Base de Datos  
+[src]  
+2. File Manager  
+[src]  
+
+## Práctica 5  
+1. spOOtify  
+[src]  
+
+
+
+
+
+
+
+
