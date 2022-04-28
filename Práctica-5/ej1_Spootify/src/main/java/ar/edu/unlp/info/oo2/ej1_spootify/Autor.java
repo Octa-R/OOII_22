@@ -10,8 +10,8 @@ public class Autor {
     private String nombre;
     private List<Album> albums;
 
-    public Autor() {
-        this.albums = new ArrayList<>();
+    public Autor(List<Album> discografia) {
+        this.albums = discografia;
     }
 
     public List<Album> getAlbums() {

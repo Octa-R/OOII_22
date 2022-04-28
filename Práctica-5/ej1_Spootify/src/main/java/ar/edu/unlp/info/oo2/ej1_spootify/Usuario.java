@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Usuario {
     private String nombre;
-    private List<String> myMusic;
+    private List<Tema> myMusic;
     public Usuario() {
         this.myMusic = new ArrayList<>();
     }
-    public void agregarTema(String tema) {
+    public void agregarTema(Tema tema) {
         this.myMusic.add(tema);
     }
-    public void quitarTema(String tema) {
+    public void quitarTema(Tema tema) {
         this.myMusic.remove(tema);
     }
 

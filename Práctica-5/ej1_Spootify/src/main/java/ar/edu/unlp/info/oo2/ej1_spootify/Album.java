@@ -10,9 +10,9 @@ public class Album {
     private String nombre;
     private List<Tema> temas;
 
-    public Album(String nombre) {
+    public Album(String nombre,List<Tema> listaDeTemas) {
         this.nombre = nombre;
-        this.temas = new ArrayList<>();
+        this.temas = listaDeTemas;
     }
     public List<Tema> getTemas() {
         return this.temas;
@@ -24,8 +24,7 @@ public class Album {
         return temas.stream()
                 .filter(tema -> {
                     Matcher matcher = pattern.matcher(tema.getNombre());
-                    boolean matchFound = matcher.find();
-                    return matchFound;
+                    return matcher.find();
                 })
                 .collect(Collectors.toList());
     }

@@ -53,4 +53,13 @@ public class Spootify {
                 .flatMap(List::stream)
                 .collect(Collectors.toList());
     }
+
+
+    public boolean addUsuario(Usuario usr) {
+        return this.usuarios.add(usr);
+    }
+
+    public boolean addAutor(Autor a) {
+        return this.autores.add(a);
+    }
 }
