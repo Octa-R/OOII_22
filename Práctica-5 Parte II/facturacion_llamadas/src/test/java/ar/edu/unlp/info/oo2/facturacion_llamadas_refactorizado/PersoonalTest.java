@@ -1,7 +1,9 @@
-package ar.edu.unlp.info.oo2.facturacion_llamadas;
+package ar.edu.unlp.info.oo2.facturacion_llamadas_refactorizado;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import ar.edu.unlp.info.oo2.facturacion_llamadas.Persoona;
+import ar.edu.unlp.info.oo2.facturacion_llamadas.Persoonal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

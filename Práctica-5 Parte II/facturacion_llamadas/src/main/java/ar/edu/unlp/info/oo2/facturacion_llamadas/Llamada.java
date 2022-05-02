@@ -1,14 +1,14 @@
 package ar.edu.unlp.info.oo2.facturacion_llamadas;
 
+//	Bad Smell Data Class
+
 public class Llamada {
 	protected String tipoDeLlamada;
 	private String emisor;
 	private String remitente;
 	public int dur;
-	
-	public Llamada() {
-		
-	}
+	public Llamada() {}
+	//p3 no se usa (?)
 	public Llamada(String s, String p, String p2, Persoona p3, int dur) {
 		this.tipoDeLlamada = s;
 		this.emisor= p;

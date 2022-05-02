@@ -4,28 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+//Bad Smell clase grande
 public class Persoonal {
+	//bad smell nombres de variables no explican su uso
 	List<Persoona> lista1 = new ArrayList<Persoona>();
 	List<Llamada> lista2 = new ArrayList<Llamada>();
 	GuiaTelefonica lista3 = new GuiaTelefonica();
 	static double descuentoJur = 0.15;
 	static double descuentoFis = 0;
-	
+
 	public boolean agregarTelefono(String str) {
+		//bad smell variable auxiliar
 		boolean encontre = lista3.guia.contains(str);
 		if (!encontre) {
 			lista3.guia.add(str);
 			encontre= true;
 			return encontre;
-		}
-		else {
+		} else {
 			encontre= false;
 			return encontre;
 		}
 	}
-	
 	public Persoona registrarUsuario(String data, String nombre, String t) {
+		//bad smell variable auxiliar
 		Persoona var = new Persoona();
+		// condicional segun tipo
+		// reemplazar con polimorfismo
 		if (t.equals("fisica")) {
 			var.setNya(nombre);
 			String tel = lista3.guia.last();
@@ -49,17 +53,24 @@ public class Persoonal {
 	}
 	
 	public boolean eliminarUsuario(Persoona p) {
-		List<Persoona> l = p.sis.lista1.stream().filter(persona -> persona != p).collect(Collectors.toList());
+
+		//l es la lista de personas que no son la persona a borrar
+		List<Persoona> l = p.sis.lista1.stream()
+				.filter(persona -> persona != p)
+				.collect(Collectors.toList());
+
 		boolean borre = false;
+		//si la lista de personas a borrar tiene menos elementos
+		// es que se encontro la persona
 		if (l.size() < lista1.size()) {
-			this.lista1 = l;
-			this.lista3.guia.add(p.getTel());
+			this.lista1 = l;//lista1 son los usuarios, se podria borrar de ahi directamente
+			this.lista3.guia.add(p.getTel());//no seria remove?
 			borre = true;
 		}
 		return borre;
 		
 	}
-	
+	//parametros con malos nombres
 	public Llamada registrarLlamada(Persoona q, Persoona q2, String t, int d) {
 		Llamada x = new Llamada();
 		x.tipoDeLlamada = t;
@@ -69,27 +80,33 @@ public class Persoonal {
 		lista2.add(x);
 		q.lista1.add(x);
 		return x;
-		
 	}
 	
 	public double calcularMontoTotalLlamadas(Persoona p) {
 		double c = 0;
-		Persoona aux = null;
+		Persoona aux = null;//bad smell
+		//chequea que el numero exista
 		for (Persoona pp : lista1) {
 			if (pp.tel == p.getTel()) {
 				aux = pp;
 				break;
 			}
-		} if (aux == null) return c;
+		}
+
+		if (aux == null) return c;
+
 		if (aux != null) {
 			for (Llamada l : aux.lista1) {
 				double auxc = 0;
+				// condicional por tipo
+				//llamada deberia saber calcular su costo
 				if (l.tipoDeLlamada == "nacional") {
 					auxc += l.dur *3 + (l.dur*3*0.21);
 				} else if (l.tipoDeLlamada == "internacional") {
 					auxc += l.dur *200 + (l.dur*200*0.21);
 				}
-				
+				//condicional por tipo
+				//c/ tipo de persona deberia saber calcular su descuento
 				if (aux.t == "fisica") {
 					auxc -= auxc*descuentoFis;
 				} else if(aux.t == "juridica") {

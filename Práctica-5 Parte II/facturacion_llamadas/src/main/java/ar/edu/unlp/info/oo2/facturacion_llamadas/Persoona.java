@@ -4,12 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Persoona {
+	// bad smells los nombres no son autoexplicativos
 	public List<Llamada> lista1 = new ArrayList<Llamada>();
+	// t es tipo
 	public String t;
+	//nya en realidad es el nombre
 	public String nya;
+	//tel es telefono
 	public String tel;
 	public String cuit;
 	public String doc;
+	//sis es sistema
+	//persoona conoce a persoonal y persoonal conoce a persona
+	//no hay bajo acoplamiento
 	public Persoonal sis;
 	
 	public List<Llamada> getLista1() {
