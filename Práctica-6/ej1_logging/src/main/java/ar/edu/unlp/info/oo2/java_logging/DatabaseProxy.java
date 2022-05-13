@@ -17,14 +17,22 @@ public class DatabaseProxy implements DatabaseAccess {
         this.isLogged = false;
         //nombre del logeer es "db"
         logger = Logger.getLogger("dblogger");
+
         //level warning
         logger.setLevel(Level.ALL);
+
+        //HANDLER
         /* se agrega console handler con simple formatter */
         FileHandler consoleHandler = new FileHandler(".\\log.txt");
-        consoleHandler.setFormatter(new SimpleFormatter());
-        logger.addHandler(consoleHandler);
+        Handler handler = new FilterHandler(new String[]{"xd"});
 
-        logger.fine("todo está bien");
+        //FORMATTER
+//        Formatter formatter = new SimpleFormatter();
+        Formatter formatter = new JSONFormatter();
+//        Formatter formatter = new UpperCaseFormatter();
+
+        consoleHandler.setFormatter(formatter);
+        logger.addHandler(consoleHandler);
     }
     @Override
     public Collection<String> getSearchResults(String queryString) {
