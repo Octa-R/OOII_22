@@ -22,11 +22,16 @@ public class DatabaseProxy implements DatabaseAccess {
         logger.setLevel(Level.ALL);
 
         //HANDLER
-        /* se agrega console handler con simple formatter */
-        FileHandler fileHandler = new FileHandler(".\\log.txt");
-        Formatter otroFormater = new UpperCaseFormatter();
-        fileHandler.setFormatter(otroFormater);
-        Handler handler = new FilterHandler(new String[]{"access","xd"},fileHandler);
+        /* se agrega file handler con mayus formatter */
+//        FileHandler fileHandler = new FileHandler(".\\log.txt");
+//        Formatter formaterMayus = new UpperCaseFormatter();
+//        fileHandler.setFormatter(formaterMayus);
+//        Handler handler = new FilterHandler(new String[]{"access","xd"},fileHandler);
+
+//        se agrega mail handler con stream formatter
+        Handler handler = new MailHandler(new StreamHandler());
+
+
 
         //FORMATTER
         Formatter formatter = new SimpleFormatter();

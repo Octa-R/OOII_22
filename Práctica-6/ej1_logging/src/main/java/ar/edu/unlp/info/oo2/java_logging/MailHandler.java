@@ -1,6 +1,8 @@
 package ar.edu.unlp.info.oo2.java_logging;
 
 import java.util.Properties;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
@@ -10,16 +12,27 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
-public class MailExample {
+public class MailHandler extends Handler {
+    private Handler handler;
 
-    public static void main(String[] args) {
+    public MailHandler(Handler handler) {
+        this.handler = handler;
+    }
+
+    //https://mailtrap.io/inboxes/1746197/messages
+
+    @Override
+    public void publish(LogRecord record) {
+
+        String logMessage = record.getMessage();
+        String logLevel = record.getLevel().toString();
         try {
             String from = "example@logger.com";
             String to = "destination@mail.com";
 
             // credenciales
-            String username = ""; // Completar con su username de mailtrap
-            String password = ""; // Completar con su password de mailtrap
+            String username = "f7dd0cd6d2c43f"; // Completar con su username de mailtrap
+            String password = "65c9bc079ddd9e"; // Completar con su password de mailtrap
 
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
@@ -36,12 +49,24 @@ public class MailExample {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from, "Java logging mail"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject("Tema del mail");
-            message.setText("Texto del mail");
+
+            //----
+            message.setSubject(logLevel);
+            message.setText(logMessage);
             Transport.send(message);
         }
         catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void flush() {
+        this.handler.flush();
+    }
+
+    @Override
+    public void close() throws SecurityException {
+        this.handler.close();
     }
 }
