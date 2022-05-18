@@ -10,8 +10,10 @@ import java.util.logging.SimpleFormatter;
 
 public class FilterHandler extends Handler {
     private String[] words;
-    public FilterHandler(String[] words){
+    private Handler handler;
+    public FilterHandler(String[] words,Handler handler){
         super();
+        this.handler = handler;
         this.words = words;
     }
 
@@ -19,17 +21,19 @@ public class FilterHandler extends Handler {
     public void publish(LogRecord record) {
         String message = record.getMessage();
         for(int i = 0; i < words.length; i++ ) {
-            message.replace(words[i],"***");
+            message = message.replace(words[i],"***");
         }
+        record.setMessage(message);
+        this.handler.publish(record);
     }
 
     @Override
     public void flush() {
-
+        this.handler.flush();
     }
 
     @Override
     public void close() throws SecurityException {
-
+        this.handler.close();
     }
 }

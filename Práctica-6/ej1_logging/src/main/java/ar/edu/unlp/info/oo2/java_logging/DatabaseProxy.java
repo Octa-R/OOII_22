@@ -23,16 +23,21 @@ public class DatabaseProxy implements DatabaseAccess {
 
         //HANDLER
         /* se agrega console handler con simple formatter */
-        FileHandler consoleHandler = new FileHandler(".\\log.txt");
-        Handler handler = new FilterHandler(new String[]{"xd"});
+        FileHandler fileHandler = new FileHandler(".\\log.txt");
+        Formatter otroFormater = new UpperCaseFormatter();
+        fileHandler.setFormatter(otroFormater);
+        Handler handler = new FilterHandler(new String[]{"access","xd"},fileHandler);
 
         //FORMATTER
-//        Formatter formatter = new SimpleFormatter();
-        Formatter formatter = new JSONFormatter();
+        Formatter formatter = new SimpleFormatter();
+//        Formatter formatter = new JSONFormatter();
 //        Formatter formatter = new UpperCaseFormatter();
 
-        consoleHandler.setFormatter(formatter);
-        logger.addHandler(consoleHandler);
+        //se agrega formatter
+        handler.setFormatter(formatter);
+        //se agrega handler
+        logger.addHandler(handler);
+
     }
     @Override
     public Collection<String> getSearchResults(String queryString) {
@@ -47,11 +52,11 @@ public class DatabaseProxy implements DatabaseAccess {
     @Override
     public int insertNewRow(List<String> rowData) {
         if  (isLogged) {
-            Logger.getLogger("dblogger").log(Level.WARNING,"valid insertion acces");
+            Logger.getLogger("dblogger").log(Level.WARNING,"valid insertion access");
             int newId = this.db.insertNewRow(rowData);
             return newId;
         }
-        Logger.getLogger("dblogger").log(Level.SEVERE,"invalid insertion acces");
+        Logger.getLogger("dblogger").log(Level.SEVERE,"invalid insertion access");
         return -1;
     }
 
