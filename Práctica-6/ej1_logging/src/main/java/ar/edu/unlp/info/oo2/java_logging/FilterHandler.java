@@ -1,12 +1,7 @@
 package ar.edu.unlp.info.oo2.java_logging;
 
-import java.util.Formatter;
-import java.util.List;
-import java.util.Vector;
 import java.util.logging.Handler;
-import java.util.logging.Level;
 import java.util.logging.LogRecord;
-import java.util.logging.SimpleFormatter;
 
 public class FilterHandler extends Handler {
     private String[] words;
@@ -20,8 +15,8 @@ public class FilterHandler extends Handler {
     @Override
     public void publish(LogRecord record) {
         String message = record.getMessage();
-        for(int i = 0; i < words.length; i++ ) {
-            message = message.replace(words[i],"***");
+        for (String word : words) {
+            message = message.replace(word, "***");
         }
         record.setMessage(message);
         this.handler.publish(record);
