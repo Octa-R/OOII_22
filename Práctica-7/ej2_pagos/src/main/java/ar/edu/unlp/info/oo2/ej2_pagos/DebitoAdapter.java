@@ -4,8 +4,8 @@ import java.util.List;
 
 public class DebitoAdapter implements MedioDePago{
     private DebitoGateway debitoGateway;
-    public DebitoAdapter(DebitoGateway debitoGateway) {
-        this.debitoGateway = debitoGateway;
+    public DebitoAdapter() {
+        this.debitoGateway = new DebitoGateway();
     }
 
     @Override

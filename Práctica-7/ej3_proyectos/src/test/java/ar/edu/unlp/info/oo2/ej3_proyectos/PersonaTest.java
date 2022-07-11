@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.unlp.info.oo2.ej2_pagos;
+package ar.edu.unlp.info.oo2.ej3_proyectos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -4,6 +4,10 @@ public class Pedido {
     double monto;
     MedioDePago medioDePago;
     private Cliente cliente;
+    public Pedido(Cliente cliente,double monto) {
+        this.cliente = cliente;
+        this.monto = monto;
+    }
 
     public double monto(){
         return monto;
