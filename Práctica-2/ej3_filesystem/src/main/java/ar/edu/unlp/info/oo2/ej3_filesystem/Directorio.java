@@ -37,7 +37,7 @@ public class Directorio extends Filesystem{
     public int getTamano() {
         return this.tamano;
     }
-    public void addChildren(Filesystem children) {
+    public void agregar(Filesystem children) {
         this.children.add(children);
     }
 }

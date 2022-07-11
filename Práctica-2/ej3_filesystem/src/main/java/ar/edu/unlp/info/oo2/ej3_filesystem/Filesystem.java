@@ -19,4 +19,7 @@ public abstract class Filesystem {
         return this.fecha;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 }
