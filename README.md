@@ -7,12 +7,13 @@
 [test](https://github.com/Octa-R/OOII_22/tree/test/P1/ej1%20-%20Twitter/src/main/java/ar/edu/unlp/info/oo2/twitter)
 
 2. biblioteca  
-[src](https://github.com/Octa-R/OOII_22/tree/main/P1/ej2%20-%20biblioteca/src/main/java/ar/edu/unlp/info/oo2/biblioteca)
-[test](https://github.com/Octa-R/OOII_22/tree/main/P1/ej2%20-%20biblioteca/src/main/java/ar/edu/unlp/info/oo2/biblioteca)
+
+[src](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-1/ej2%20-%20biblioteca/src/main/java/ar/edu/unlp/info/oo2/biblioteca)
+[test](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-1/ej2%20-%20biblioteca/src/test/java/ar/edu/unlp/info/oo2/biblioteca)
 
 3. media player  
-[src](https://github.com/Octa-R/OOII_22/tree/main/P1/ej3%20-%20Media%20Player/src/main/java/ar/edu/unlp/info/oo2/media_player)
-[tests](https://github.com/Octa-R/OOII_22/tree/main/P1/ej3%20-%20Media%20Player/src/test/java/ar/edu/unlp/info/oo2/media_player)
+[src](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-1/ej3%20-%20Media%20Player/src/main/java/ar/edu/unlp/info/oo2/media_player)
+[tests](https://github.com/Octa-R/OOII_22/tree/main/Pr%C3%A1ctica-1/ej3%20-%20Media%20Player/src/test/java/ar/edu/unlp/info/oo2/media_player)
 
 ## Práctica 2
 1. Topografías  
